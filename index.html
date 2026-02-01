@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love 💕</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ffcccc, #ff9999);
+    color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    z-index: 1;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+}
+
+.title {
+    font-size: 3em;
+    color: #ff69b4;
+    text-shadow: 0 0 10px #ff69b4;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #ff69b4;
+    }
+    to {
+        text-shadow: 0 0 20px #ff69b4;
+    }
+}
+
+.btn {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ff69b4;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #d63384;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.message p {
+    margin: 10px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.why-love {
+    margin-top: 30px;
+}
+
+.why-love h2 {
+    color: #ff69b4;
+    font-size: 2em;
+}
+
+.why-love ul {
+    list-style: none;
+    padding: 0;
+}
+
+.why-love li {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #d63384;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.reason.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff69b4;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation: float 5s linear infinite;
+    opacity: 0.7;
+}
+
+.heart:nth-child(1) { left: 10%; animation-duration: 6s; animation-delay: 0s; }
+.heart:nth-child(2) { left: 30%; animation-duration: 4s; animation-delay: 1s; }
+.heart:nth-child(3) { left: 50%; animation-duration: 5s; animation-delay: 2s; }
+.heart:nth-child(4) { left: 70%; animation-duration: 7s; animation-delay: 3s; }
+.heart:nth-child(5) { left: 90%; animation-duration: 5s; animation-delay: 4s; }
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-100px) rotate(360deg); }
+}
+
+audio {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 200px;
+}
+    </style>
+</head>
+<body>
+    <audio id="bg-music" controls loop>
+    <source src="Ed_Sheeran_-_Perfect(256k).mp3" type="audio/mpeg">
+    Your browser does not support the audio element. (Replace src with a romantic music URL, e.g., a free domain romantic tune)
+</audio>
+
+<div class="container">
+    <h1 class="title">To My Dearest Love Mitchyyy 💖</h1>
+    
+    <button id="reveal-btn" class="btn">Open Your Love Letter</button>
+    
+    <div id="love-message" class="message hidden">
+        <p>My darling,</p>
+        <p>Every moment with you feels like a dream. Your smile lights up my world, and your touch makes my heart race. I love you more than words can say. Forever yours. 💕</p>
+    </div>
+    
+    <div id="why-love" class="why-love">
+        <h2>Why I Love You</h2>
+        <ul>
+            <li class="reason hidden">Your beauty melts my heart.</li>
+            <li class="reason hidden">Your smile and laugh are my favorite sounds.</li>
+            <li class="reason hidden">You make every day an adventure.</li>
+            <li class="reason hidden">Your eyes sparkle like stars.</li>
+            <li class="reason hidden">You understand me like no one else.</li>
+            <li class="reason hidden">Your kindness inspires me.</li>
+            <li class="reason hidden">You make me a better person.</li>
+            <li class="reason hidden">I cherish every moment we share.</li>
+            <li class="reason hidden">You are my greatest support and comfort.</li>
+            <li class="reason hidden">Being with you feels like home.</li>
+            <li class="reason hidden">You have the most beautiful soul and I love you so much</li>
+            <li class="reason hidden">You're my best friend and soulmate.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="hearts">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const revealBtn = document.getElementById('reveal-btn');
+    const loveMessage = document.getElementById('love-message');
+    const reasons = document.querySelectorAll('.reason');
+    
+    revealBtn.addEventListener('click', function() {
+        loveMessage.classList.remove('hidden');
+        loveMessage.classList.add('visible');
+        
+        // Animate "Why I Love You" reasons sequentially
+        reasons.forEach((reason, index) => {
+            setTimeout(() => {
+                reason.classList.remove('hidden');
+                reason.classList.add('visible');
+            }, index * 500); // 500ms delay between each
+        });
+        
+        // Optional: Play music on reveal (but browsers may block autoplay)
+        const music = document.getElementById('bg-music');
+        music.play().catch(error => console.log('Autoplay prevented:', error));
+    });
+});
+</script>
+</body>
+</html>
